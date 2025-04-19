@@ -1,0 +1,101 @@
+{
+  "expo": {
+    "name": "Humming Game",
+    "slug": "humming-game",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.humminggame.hummm",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "This app needs access to your microphone to record your humming.",
+        "NSCameraUsageDescription": "This app uses the camera to let you take profile pictures.",
+        "NSPhotoLibraryUsageDescription": "This app accesses your photos to let you share them with friends.",
+        "UIBackgroundModes": ["audio", "fetch", "remote-notification"]
+      },
+      "associatedDomains": ["applinks:humminggame.app"],
+      "newArchEnabled": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.humminggame.hummm",
+      "permissions": [
+        "RECORD_AUDIO",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "VIBRATE",
+        "RECEIVE_BOOT_COMPLETED"
+      ],
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "humminggame",
+              "host": "*"
+            },
+            {
+              "scheme": "https",
+              "host": "*.humminggame.app"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ],
+      "newArchEnabled": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow Humming Game to access your microphone."
+        }
+      ],
+      [
+        "expo-file-system",
+        {
+          "fileSystemPermission": "Allow Humming Game to access your files."
+        }
+      ],
+      "expo-updates",
+      "expo-apple-authentication",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#FF5757"
+        }
+      ],
+      "expo-secure-store"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "your-project-id"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/your-project-id"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "scheme": "humminggame",
+    "sdkVersion": "52.0.0"
+  }
+}
