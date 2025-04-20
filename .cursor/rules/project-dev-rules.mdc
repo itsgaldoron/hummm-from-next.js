@@ -1,0 +1,106 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+## Project Overview
+
+This is a React Native Expo project for a musical humming game called "Hummm". The project is being transitioned from a web-based implementation to a mobile app using Expo.
+
+## File Structure Guidelines
+
+- Keep React Native components in the `components/` directory
+- Screen components go in the `screens/` directory
+- Utility functions belong in the `utils/` directory
+- Hooks should be placed in the `hooks/` directory
+- Context providers go in the `context/` directory
+
+## Coding Standards
+
+### General
+
+- Use functional components with hooks instead of class components
+- Use TypeScript types/interfaces for component props
+- Follow the existing naming conventions (PascalCase for components, camelCase for functions)
+- Keep components focused on a single responsibility
+- Extract reusable logic into custom hooks
+
+### React Native Specific
+
+- Use the StyleSheet API for styles instead of inline styles
+- Prefer the `<TouchableOpacity>` component for touchable elements
+- Use the `<FlatList>` component for rendering lists
+- Always handle loading and error states
+- Use the SafeAreaView component for content that should respect device notches
+
+### Audio Handling
+
+- Always request permissions before accessing the microphone
+- Use the Expo Audio API consistently
+- Clean up audio resources in useEffect cleanup functions
+- Handle audio interruptions (phone calls, etc.)
+- Test audio features on physical devices, not just simulators
+
+### Navigation
+
+- Use the existing navigation structure in `navigation/AppNavigator.js`
+- Follow the established patterns for screen transitions
+- Use route params for passing data between screens
+- Avoid deep nesting of navigators
+
+## Asset Management
+
+- Place all static assets in the `assets/` directory
+- Use the appropriate subdirectories for different asset types
+- Follow the existing naming conventions for assets
+- Optimize images before adding them to the project
+
+## Performance Considerations
+
+- Memoize expensive calculations with useMemo
+- Use useCallback for functions passed as props
+- Avoid unnecessary re-renders with React.memo
+- Use appropriate list rendering techniques (FlatList, SectionList)
+- Profile and optimize components that feel sluggish
+
+## Testing
+
+- Write unit tests for utility functions
+- Create component tests for UI components
+- Test on both iOS and Android platforms
+- Test on different device sizes
+- Verify audio recording and playback on physical devices
+
+## Expo Specific
+
+- Keep the Expo SDK version consistent
+- Be cautious when adding native dependencies
+- Test Expo updates before deploying
+- Use Expo's managed workflow features when possible
+- Follow Expo's best practices for asset loading
+
+## Common Pitfalls to Avoid
+
+- Avoid using libraries that require native modules not included in Expo
+- Don't modify the `app.json` configuration without understanding the implications
+- Be careful with audio permissions and configuration
+- Avoid blocking the main thread with heavy computations
+- Don't use web-specific APIs that aren't available in React Native
+
+## Transition Notes
+
+- The project is being transitioned from web to mobile
+- Some components may need to be rewritten for mobile
+- Pay attention to platform-specific behavior
+- Use React Native's platform-specific file extensions when needed (.ios.js, .android.js)
+- Adapt web-focused UI to be touch-friendly
+
+## Icons 
+- Use 'lucide-react-native' icons 
+
+## Helpful Resources
+
+- [Expo Documentation](mdc:https:/docs.expo.dev)
+- [React Native Documentation](mdc:https:/reactnative.dev/docs/getting-started)
+- [Expo Audio API](mdc:https:/docs.expo.dev/versions/latest/sdk/audio)
+- [React Navigation](mdc:https:/reactnavigation.org/docs/getting-started)
